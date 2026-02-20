@@ -1,0 +1,53 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import CTA from "../../components/CTA.astro";
+import { getCollection } from "astro:content";
+
+const studies = (await getCollection("case-studies"))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Page title="Case Studies" description="Real results from founder-led companies we've helped scale across Southeast Asia.">
+  <Hero
+    title="Real Results, Real Businesses"
+    subtitle="See how we've helped founder-led companies build systems that scale."
+    eyebrow="Case Studies"
+    image="/images/heroes/hero-services.jpg"
+  />
+
+  <section class="section-padding">
+    <div class="container-site">
+      <div class="grid gap-12">
+        {studies.map((study) => (
+          <a href={`/case-studies/${study.slug}`} class="card overflow-hidden group grid lg:grid-cols-2">
+            {study.data.image && (
+              <div class="aspect-video lg:aspect-auto overflow-hidden">
+                <img
+                  src={study.data.image}
+                  alt={study.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            )}
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary bg-purple-50 px-2 py-1 rounded">{study.data.service}</span>
+                <span class="text-xs text-neutral-600">{study.data.industry}</span>
+              </div>
+              <h2 class="text-xl lg:text-2xl mb-3 group-hover:text-primary transition-colors">{study.data.title}</h2>
+              <p class="text-neutral-800 leading-relaxed mb-4">{study.data.challenge}</p>
+              <div class="flex flex-wrap gap-2">
+                {study.data.results.slice(0, 3).map((result) => (
+                  <span class="text-xs bg-purple-50 text-primary px-3 py-1 rounded-full">{result}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Ready to Become Our Next Success Story?" />
+</Page>

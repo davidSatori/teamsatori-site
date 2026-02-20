@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import BlogCard from "../../components/BlogCard.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Get team member for author bio
+const team = await getCollection("team");
+const author = team.find((m) => m.id === post.data.author);
+
+// Get related posts (same category, excluding current, max 3)
+const allPosts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const related = allPosts
+  .filter((p) => p.slug !== post.slug && p.data.category === post.data.category)
+  .slice(0, 3);
+---
+
+<BlogPost
+  title={post.data.title}
+  date={post.data.date}
+  author={author?.data.name || post.data.author}
+  category={post.data.category}
+  summary={post.data.summary}
+  image={post.data.image}
+>
+  <Content />
+
+  {/* Author Bio */}
+  {author && (
+    <div class="mt-12 pt-8 border-t border-neutral-200 not-prose">
+      <div class="flex items-start gap-4">
+        {author.data.image && (
+          <img
+            src={author.data.image}
+            alt={author.data.name}
+            class="w-16 h-16 rounded-full object-cover shrink-0"
+          />
+        )}
+        <div>
+          <p class="font-bold text-neutral-950">{author.data.name}</p>
+          <p class="text-sm text-neutral-600 mb-2">{author.data.title}</p>
+          <p class="text-sm text-neutral-800 leading-relaxed">{author.data.bio}</p>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {/* Related Posts */}
+  {related.length > 0 && (
+    <div class="mt-16 not-prose">
+      <h2 class="text-2xl mb-8">Related Articles</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {related.map((r) => (
+          <BlogCard
+            title={r.data.title}
+            summary={r.data.summary}
+            date={r.data.date}
+            author={r.data.author}
+            category={r.data.category}
+            image={r.data.image}
+            slug={r.slug}
+          />
+        ))}
+      </div>
+    </div>
+  )}
+</BlogPost>
