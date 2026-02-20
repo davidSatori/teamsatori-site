@@ -1,0 +1,182 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import Testimonial from "../../components/Testimonial.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "90-Minute Meeting",
+    description: "We meet with your leadership team to understand where you are, where you want to go, and whether EOS\u00AE is the right fit.",
+  },
+  {
+    number: "2",
+    title: "Focus Day\u2122",
+    description: "Your first full-day session. We teach the EOS\u00AE tools, build your V/TO\u2122, and set 90-day Rocks for the first time.",
+  },
+  {
+    number: "3",
+    title: "Quarterly Sessions",
+    description: "Every 90 days, we reconvene to review Rocks, solve issues, and reset priorities. This is where traction compounds.",
+  },
+];
+
+const benefits = [
+  {
+    title: "Vision Alignment",
+    description: "Get your entire leadership team 100% on the same page about where you\u2019re going and how you\u2019re going to get there.",
+  },
+  {
+    title: "Traction & Accountability",
+    description: "90-day Rocks, weekly Scorecards, and Level 10 Meetings\u2122 create rhythm and accountability that sticks.",
+  },
+  {
+    title: "Healthy Team Dynamics",
+    description: "Open, honest communication. Functional teams that resolve issues quickly instead of letting them fester.",
+  },
+  {
+    title: "Scalable Structure",
+    description: "Clear accountability chart, documented processes, and systems that work whether you\u2019re 20 people or 200.",
+  },
+];
+---
+
+<Page title="EOS\u00AE Implementation" description="Get traction with an operating system that scales with you. Certified EOS Implementers helping founder-led companies across Southeast Asia.">
+  <Hero
+    title="Get Traction with an Operating System Built for Growth"
+    subtitle="EOS\u00AE gives your leadership team a proven set of tools to get what you want from your business \u2014 vision, traction, and healthy team dynamics."
+    eyebrow="EOS\u00AE Implementation"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Book a Free 90-Minute Meeting", href: "/contact" }}
+  />
+
+  <!-- The Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">Growth Without Systems Creates Chaos</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          You built this company from nothing. You wore every hat, made every decision, and powered through with vision and grit.
+        </p>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          But now the business has outgrown the founder-driven model. Meetings go in circles. Priorities shift weekly.
+          People aren&rsquo;t sure who owns what. You&rsquo;re working harder than ever but traction feels elusive.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          EOS&reg; (the Entrepreneurial Operating System) was designed for exactly this moment &mdash; when a founder-led company
+          needs structure without bureaucracy.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">Signs You Need EOS&reg;</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Your leadership team isn&rsquo;t aligned on priorities
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            The same issues keep resurfacing in meetings
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Accountability is unclear or inconsistent
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            You&rsquo;re the bottleneck for most decisions
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Growth has stalled or feels harder than it should
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            You know what you want but can&rsquo;t get your team to execute
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">What EOS&reg; gives you</span>
+        <h2 class="text-2xl lg:text-4xl text-white">Six Key Components&trade; That Strengthen Every Business</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {benefits.map((benefit) => (
+          <div class="bg-white/10 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+            <p class="text-sm text-white/80">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How EOS\u00AE Implementation Works" steps={processSteps} />
+
+  <!-- Your Implementers -->
+  <section class="section-padding">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow mb-3 block">Your implementation team</span>
+        <h2 class="text-2xl lg:text-4xl mb-4">Certified EOS&reg; Implementers Across Asia</h2>
+        <p class="text-neutral-600 max-w-2xl mx-auto">
+          Our team includes Expert and Professional EOS Implementers&reg; with deep experience in Southeast and East Asian markets.
+          We don&rsquo;t just teach the tools &mdash; we&rsquo;ve used them in our own businesses.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card p-6 text-center">
+          <img src="/images/team/haraya.png" alt="Haraya del Rosario Gust" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="font-bold">Haraya del Rosario Gust</h3>
+          <p class="text-sm text-neutral-600">Expert EOS Implementer&trade;</p>
+        </div>
+        <div class="card p-6 text-center">
+          <img src="/images/team/audrey.webp" alt="Audrey Tanco Uy" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="font-bold">Audrey Tanco Uy</h3>
+          <p class="text-sm text-neutral-600">Professional EOS Implementer&reg;</p>
+        </div>
+        <div class="card p-6 text-center">
+          <img src="/images/team/jeni.webp" alt="Jeni Clift" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="font-bold">Jeni Clift</h3>
+          <p class="text-sm text-neutral-600">Professional EOS Implementer&reg;</p>
+        </div>
+        <div class="card p-6 text-center">
+          <img src="/images/team/juan.webp" alt="Juan Lee" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="font-bold">Juan Lee</h3>
+          <p class="text-sm text-neutral-600">Professional EOS Implementer&reg;</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/about#team" class="text-primary hover:underline text-sm">Meet the full team &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Anchor -->
+  <section class="section-padding bg-neutral-100">
+    <div class="container-narrow text-center">
+      <h2 class="text-2xl lg:text-3xl mb-4">What Does EOS&reg; Implementation Cost?</h2>
+      <p class="text-neutral-800 leading-relaxed mb-4">
+        Implementation typically runs over 2 years with quarterly full-day sessions plus annual planning days.
+        Pricing varies based on your team size and needs, but most founder-led companies invest between
+        <strong>USD $50,000&ndash;$80,000</strong> over the full engagement.
+      </p>
+      <p class="text-neutral-600 text-sm mb-8">
+        That includes all session days, between-session support, and access to the complete EOS&reg; toolbox.
+        Most clients see ROI within the first two quarters.
+      </p>
+      <a href="/contact" class="btn-primary">Book a Free 90-Minute Meeting</a>
+    </div>
+  </section>
+
+  <CTA title="Ready to Get Traction? Let\u2019s Start with a Conversation." />
+</Page>

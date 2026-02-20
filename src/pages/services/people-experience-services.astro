@@ -1,0 +1,145 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "People Systems Audit",
+    description: "We assess your current HR infrastructure \u2014 hiring, onboarding, performance management, compensation \u2014 and identify the biggest gaps.",
+  },
+  {
+    number: "2",
+    title: "Design & Build",
+    description: "We design and implement the systems you need: scorecards, accountability charts, performance frameworks, and people processes.",
+  },
+  {
+    number: "3",
+    title: "Embed & Coach",
+    description: "We coach your leadership team to run the new systems independently. Knowledge transfer is built into every engagement.",
+  },
+];
+---
+
+<Page title="People Experience Services" description="Build people systems that scale \u2014 from hiring scorecards to accountability structures for growing founder-led companies.">
+  <Hero
+    title="Build People Systems That Scale with Your Business"
+    subtitle="From hiring scorecards to accountability structures, we build the people infrastructure that growing companies need but rarely have."
+    eyebrow="People Experience Services"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Start a People Systems Audit", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">Growing Teams Without Growing Systems</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          You went from 10 to 50 people, and suddenly everything that used to &ldquo;just work&rdquo; doesn&rsquo;t anymore.
+          Hiring takes too long. New hires don&rsquo;t ramp fast enough. Performance conversations don&rsquo;t happen.
+          Good people leave because they don&rsquo;t see a path forward.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          Most founder-led companies underinvest in people systems because the founder &ldquo;just handled it.&rdquo;
+          But at scale, you need infrastructure &mdash; not more founders.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">What We Build</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Hiring scorecards and structured interview processes
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Onboarding systems that get new hires productive fast
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            EOS&reg;-aligned accountability charts and seat definitions
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Performance management frameworks (quarterly conversations, not annual reviews)
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Compensation benchmarking and structures
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Employee engagement and retention strategies
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Our approach</span>
+        <h2 class="text-2xl lg:text-4xl text-white mb-4">People Services, Not Just HR</h2>
+        <p class="text-white/80 max-w-2xl mx-auto">
+          We don&rsquo;t just write policies. We build the systems, coach the leaders, and create the habits
+          that make your people processes actually work day-to-day.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Hiring &amp; Selection</h3>
+          <p class="text-sm text-white/80">Structured scorecards, interview guides, and GWC (Get it, Want it, Capacity) evaluation aligned with EOS&reg;.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Onboarding</h3>
+          <p class="text-sm text-white/80">90-day onboarding plans that ramp new hires faster and reduce early attrition.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Performance</h3>
+          <p class="text-sm text-white/80">Quarterly conversations, 5-5-5 reviews, and people analyzer tools that drive accountability.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Compensation</h3>
+          <p class="text-sm text-white/80">Market benchmarking, pay structures, and incentive design that retains top talent.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Culture &amp; Engagement</h3>
+          <p class="text-sm text-white/80">Core values integration, pulse surveys, and retention strategies that keep your best people.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Leadership Coaching</h3>
+          <p class="text-sm text-white/80">Coach your managers to have the hard conversations and build their people skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How People Experience Engagements Work" steps={processSteps} />
+
+  <!-- Practice Lead -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="flex flex-col sm:flex-row items-center gap-8">
+        <img src="/images/team/abi.png" alt="Abigail Madura" class="w-32 h-32 rounded-full object-cover shrink-0" />
+        <div>
+          <span class="eyebrow mb-2 block">Your people services lead</span>
+          <h3 class="text-xl font-bold mb-2">Abigail Madura</h3>
+          <p class="text-sm text-neutral-600 mb-3">Practice Lead &mdash; People Services</p>
+          <p class="text-neutral-800 leading-relaxed">
+            Abi is a seasoned HR leader and ontological coach with 20+ years of experience building people systems
+            and leading EOS-aligned HR practices. She brings both strategic vision and hands-on implementation
+            to every engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Build People Systems That Scale with You" />
+</Page>

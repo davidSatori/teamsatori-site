@@ -1,0 +1,132 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Assess Your Team",
+    description: "Everyone completes Gallup\u00AE CliftonStrengths and/or Kolbe\u2122 assessments. We analyze individual and team-level patterns.",
+  },
+  {
+    number: "2",
+    title: "Team Workshop",
+    description: "A facilitated session where your team discovers their strengths, understands each other\u2019s working styles, and identifies gaps.",
+  },
+  {
+    number: "3",
+    title: "Coaching & Action",
+    description: "Individual and team coaching to apply insights in daily work. We help you restructure roles, improve collaboration, and build high-performing habits.",
+  },
+];
+---
+
+<Page title="Team Health & Performance" description="Gallup\u00AE Strengths and Kolbe\u2122 certified coaching to help founders build high-performing teams across Southeast Asia.">
+  <Hero
+    title="Your People Are Your Biggest Lever. Are You Using Them Well?"
+    subtitle="We use Gallup\u00AE Strengths and Kolbe\u2122 assessments to help you hire, coach, and structure your team for maximum performance."
+    eyebrow="Team Health & Performance"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Assess Your Team", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">Great People in the Wrong Seats</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          You&rsquo;ve hired smart, capable people. But something isn&rsquo;t clicking. Team dynamics are off.
+          Some people are thriving while others are struggling &mdash; and you can&rsquo;t figure out why.
+        </p>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          The problem usually isn&rsquo;t talent. It&rsquo;s fit. People in roles that don&rsquo;t match their natural strengths
+          burn out, underperform, and eventually leave. The cost is enormous &mdash; in lost productivity, team morale, and rehiring.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          Strengths-based team development isn&rsquo;t soft. It&rsquo;s the most practical way to unlock performance
+          you&rsquo;re already paying for.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">What Assessments Reveal</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Each person&rsquo;s top natural talents and how to leverage them
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Team strengths gaps &mdash; where you&rsquo;re over-indexed and under-indexed
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Communication and collaboration friction points
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Who&rsquo;s in the right seat and who might need a role adjustment
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Hiring profiles for your next key roles
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Our tools</span>
+        <h2 class="text-2xl lg:text-4xl text-white">Certified Assessment Frameworks</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="bg-white/10 rounded-lg p-6">
+          <img src="/images/certs/gallup.svg" alt="Gallup" class="h-10 mb-4" />
+          <h3 class="text-lg font-bold text-white mb-2">Gallup&reg; CliftonStrengths</h3>
+          <p class="text-sm text-white/80">
+            Identifies each person&rsquo;s top 5 talent themes out of 34. Used by 90% of Fortune 500 companies.
+            Reveals what people naturally do best &mdash; so you can put them where they&rsquo;ll thrive.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <img src="/images/certs/kolbe.png" alt="Kolbe" class="h-10 mb-4" />
+          <h3 class="text-lg font-bold text-white mb-2">Kolbe&trade; Index</h3>
+          <p class="text-sm text-white/80">
+            Measures instinctive action modes &mdash; how someone naturally takes action when free to be themselves.
+            Critical for team composition, hiring, and reducing friction between working styles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How Team Health Engagements Work" steps={processSteps} />
+
+  <!-- Practice Lead -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="flex flex-col sm:flex-row items-center gap-8">
+        <img src="/images/team/alia.png" alt="Alia del Rosario" class="w-32 h-32 rounded-full object-cover shrink-0" />
+        <div>
+          <span class="eyebrow mb-2 block">Your team health lead</span>
+          <h3 class="text-xl font-bold mb-2">Alia del Rosario</h3>
+          <p class="text-sm text-neutral-600 mb-3">Practice Lead &mdash; Team Health &amp; Performance</p>
+          <p class="text-neutral-800 leading-relaxed">
+            Alia is a Gallup&reg; Certified Strengths Coach and Kolbe&trade; Certified Consultant who helps leaders
+            and teams grow through strengths-based, collaborative development. She brings warmth, precision,
+            and deep experience to every team engagement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Unlock the Performance You\u2019re Already Paying For" />
+</Page>

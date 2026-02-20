@@ -1,0 +1,130 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Financial Health Check",
+    description: "We review your current cash flow, profit margins, and financial habits to identify where money is leaking and where opportunity exists.",
+  },
+  {
+    number: "2",
+    title: "System Setup",
+    description: "We set up your Profit First\u00AE bank accounts, allocation percentages, and rhythm \u2014 tailored to your business stage and cash flow patterns.",
+  },
+  {
+    number: "3",
+    title: "Ongoing Rhythm",
+    description: "Bi-weekly allocation cycles, quarterly profit distributions, and regular check-ins to keep your financial habits on track.",
+  },
+];
+---
+
+<Page title="Financial Systems" description="Build cash flow clarity and profit habits with Profit First\u00AE implementation for founder-led companies in Southeast Asia.">
+  <Hero
+    title="Stop Running a Profitable Business That Has No Cash"
+    subtitle="Profit First\u00AE flips the formula: take your profit first, then run the business on what\u2019s left. We help you install the system and build the habits."
+    eyebrow="Financial Systems"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Get a Financial Health Check", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">Revenue Is Up. So Why Is There No Cash?</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          Your P&amp;L says you&rsquo;re profitable. But every month you&rsquo;re scrambling to cover payroll, chasing receivables,
+          and wondering where the money went. Sound familiar?
+        </p>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          Most founder-led companies run on the &ldquo;bank balance&rdquo; method: check the account, spend what&rsquo;s there.
+          It works when you&rsquo;re small, but it breaks as you grow.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          Profit First&reg; is a cash management system (based on the bestselling book by Mike Michalowicz) that uses
+          behavioral psychology to build financial discipline &mdash; automatically.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">What Profit First&reg; Gives You</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Guaranteed profit every quarter &mdash; not just on paper, in the bank
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Clear cash flow visibility without complex financial models
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Healthy owner&rsquo;s compensation built into the system
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Tax reserves set aside automatically &mdash; no year-end surprises
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Operating expense discipline that improves margins naturally
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">The system</span>
+        <h2 class="text-2xl lg:text-4xl text-white mb-4">How Profit First&reg; Works</h2>
+        <p class="text-white/80 max-w-2xl mx-auto">
+          Instead of Revenue &minus; Expenses = Profit, we flip it:
+          <strong class="text-white">Revenue &minus; Profit = Expenses.</strong>
+          Simple behavioral change, massive financial impact.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">Profit</div>
+          <p class="text-sm text-white/80">Taken first, every allocation cycle. Non-negotiable.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">Owner&rsquo;s Pay</div>
+          <p class="text-sm text-white/80">Your compensation, separate from business expenses.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">Tax</div>
+          <p class="text-sm text-white/80">Set aside every cycle. No surprises at year-end.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">OpEx</div>
+          <p class="text-sm text-white/80">What&rsquo;s left runs the business. Constraints breed efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How We Implement Profit First\u00AE" steps={processSteps} />
+
+  <!-- Certification -->
+  <section class="section-padding">
+    <div class="container-narrow text-center">
+      <img src="/images/certs/profit-first.png" alt="Profit First Certified" class="h-20 mx-auto mb-6" />
+      <h2 class="text-2xl lg:text-3xl mb-4">Certified Profit First&reg; Professionals</h2>
+      <p class="text-neutral-800 leading-relaxed max-w-xl mx-auto">
+        Our team is Profit First certified, which means we don&rsquo;t just recommend the book &mdash;
+        we implement the system with you, customize it for your business, and coach you through the transition.
+      </p>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Build Financial Clarity Into Your Business" />
+</Page>

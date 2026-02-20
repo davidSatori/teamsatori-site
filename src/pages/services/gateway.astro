@@ -1,0 +1,187 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import Testimonial from "../../components/Testimonial.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Scope & Strategy",
+    description: "We define your Philippines objectives, timeline, and operational needs. No boilerplate \u2014 everything is built around your specific business.",
+  },
+  {
+    number: "2",
+    title: "Launch & Build",
+    description: "We handle recruitment, compliance, office setup, and operational infrastructure. Your team is up and running in weeks, not months.",
+  },
+  {
+    number: "3",
+    title: "Operate & Scale",
+    description: "Ongoing fractional leadership, governance, and local expertise as you scale. We grow with you until you\u2019re ready to fully localize.",
+  },
+];
+---
+
+<Page title="Satori Gateway" description="Build your Philippines presence without building an executive team. Fractional leadership, recruitment, and operational infrastructure for companies expanding into the Philippines.">
+  <Hero
+    title="Your Philippines Presence, Without the Complexity"
+    subtitle="Satori Gateway gives you fractional leadership, local expertise, and operational infrastructure to launch and scale your Philippines operations \u2014 without building an executive team from scratch."
+    eyebrow="Satori Gateway"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Explore Gateway", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">The Philippines Opportunity Is Huge. The Complexity Is Real.</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          The Philippines has world-class talent, competitive costs, and English proficiency that makes it ideal
+          for operations, tech, and support teams. But setting up successfully requires more than posting jobs on LinkedIn.
+        </p>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          You need local compliance knowledge. Cultural context. Trusted vendors. And most importantly, someone on the ground
+          who can make executive decisions with your company&rsquo;s interests in mind.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          Most companies either over-invest (sending expensive expats) or under-invest (hiring a junior local manager
+          and hoping for the best). Gateway is the middle path: senior leadership at fractional cost.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">What Gateway Includes</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Fractional country leadership (EOS-trained)
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            End-to-end recruitment and talent acquisition
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Employer of Record (EOR) and HR compliance
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Office setup and operational infrastructure
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Curated partner network (legal, finance, facilities)
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Cultural integration and team building
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Proven results</span>
+        <h2 class="text-2xl lg:text-4xl text-white mb-4">From Zero to 150+ Staff in Under 12 Months</h2>
+        <p class="text-white/80 max-w-2xl mx-auto">
+          When ASX-listed EROAD needed to launch their Philippines operations, they chose Satori Gateway.
+          Within one year, we helped them build a fully operational facility with 150+ staff.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">150+</div>
+          <p class="text-sm text-white/80">Staff onboarded in under 12 months</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">60+</div>
+          <p class="text-sm text-white/80">Total hires placed across SEA</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">Full</div>
+          <p class="text-sm text-white/80">Office setup and infrastructure</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6 text-center">
+          <div class="text-2xl font-bold text-white mb-2">Ongoing</div>
+          <p class="text-sm text-white/80">Fractional leadership and governance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How Gateway Works" steps={processSteps} />
+
+  <Testimonial
+    quote="I've worked closely with Team Satori since mid-2024, receiving invaluable support and expertise while setting up our Manila office. They've handled fast-paced recruitment, and office set up, efficiently, consistently delivering strong results under pressure. With our global leadership team, I've appreciated how Team Satori quickly adapts to various working styles and challenges. Thanks for your dedication!"
+    name="Dean Curtis"
+    title="Executive VP - People & Capability, EROAD"
+  />
+
+  <!-- Why Gateway -->
+  <section class="section-padding">
+    <div class="container-site">
+      <h2 class="text-2xl lg:text-3xl text-center mb-12">Why Companies Choose Gateway Over DIY</h2>
+      <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div>
+          <h3 class="font-bold mb-3 text-red-600">DIY Expansion</h3>
+          <ul class="space-y-2 text-sm text-neutral-800">
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-0.5">&times;</span>
+              6&ndash;12 months to get operational
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-0.5">&times;</span>
+              Expensive expat or unproven local hire
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-0.5">&times;</span>
+              Compliance risks you don&rsquo;t know about
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-0.5">&times;</span>
+              Fragmented vendor management
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-500 mt-0.5">&times;</span>
+              Cultural misalignment and high turnover
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold mb-3 text-primary">Satori Gateway</h3>
+          <ul class="space-y-2 text-sm text-neutral-800">
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-0.5">&#10003;</span>
+              Operational in weeks, not months
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-0.5">&#10003;</span>
+              Senior fractional leadership at fractional cost
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-0.5">&#10003;</span>
+              Full compliance handled by local experts
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-0.5">&#10003;</span>
+              Integrated partner network, one point of contact
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-primary mt-0.5">&#10003;</span>
+              Culture embedded from day one
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Launch Your Philippines Operations the Right Way" />
+</Page>

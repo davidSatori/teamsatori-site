@@ -1,0 +1,140 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Discovery & Research",
+    description: "We interview your leadership team, survey customers, and analyze your competitive landscape to build a real picture of where you stand.",
+  },
+  {
+    number: "2",
+    title: "Strategy Workshop",
+    description: "A facilitated session where your team aligns on vision, validates growth opportunities, and makes strategic choices together.",
+  },
+  {
+    number: "3",
+    title: "Execution Roadmap",
+    description: "You leave with a clear set of priorities, owners, and timelines \u2014 not a 50-page deck, but a plan your team can actually execute.",
+  },
+];
+---
+
+<Page title="Strategy & Innovation" description="Research-backed strategy and innovation workshops for founder-led companies in Southeast Asia.">
+  <Hero
+    title="Strategy That Moves from the Whiteboard to the Real World"
+    subtitle="Research-backed workshops that help leadership teams uncover customer needs, map growth opportunities, and build strategic clarity everyone can act on."
+    eyebrow="Strategy & Innovation"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Book a Strategy Session", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">Most Strategy Never Leaves the Room</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          You&rsquo;ve done the offsite. You&rsquo;ve filled the whiteboard. Maybe you even hired a consultant who delivered a beautiful slide deck.
+          But six months later, nothing changed.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          Strategy fails when it&rsquo;s disconnected from operations. When the team doesn&rsquo;t own it.
+          When there&rsquo;s no bridge between &ldquo;where we want to go&rdquo; and &ldquo;what we do on Monday.&rdquo;
+          We build that bridge.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">What We Help You Figure Out</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Where your real growth opportunities are (not where you assume they are)
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            What your customers actually need (not just what they say)
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Which business models are worth validating
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            How to align your leadership team around a clear strategic direction
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            What to say no to &mdash; so you can say yes to what matters
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Our approach</span>
+        <h2 class="text-2xl lg:text-4xl text-white mb-4">The Satori Strategy Framework</h2>
+        <p class="text-white/80 max-w-2xl mx-auto">
+          Our proprietary framework combines design thinking, jobs-to-be-done research, and operational planning
+          into a process that founder-led companies can actually use.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Customer Discovery</h3>
+          <p class="text-sm text-white/80">Deep interviews and research to understand what your customers are really trying to accomplish.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Opportunity Mapping</h3>
+          <p class="text-sm text-white/80">Identify underserved needs and growth levers in your market that competitors are missing.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Business Model Validation</h3>
+          <p class="text-sm text-white/80">Test new ideas with real data before committing resources. Fast learning, minimal risk.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Strategic Alignment</h3>
+          <p class="text-sm text-white/80">Get every leader on the same page about direction, priorities, and trade-offs.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Innovation Sprints</h3>
+          <p class="text-sm text-white/80">Structured workshops to move from idea to validated concept in days, not months.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Execution Planning</h3>
+          <p class="text-sm text-white/80">Translate strategy into 90-day priorities with clear owners and measurable outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How a Strategy Engagement Works" steps={processSteps} />
+
+  <!-- Practice Lead -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="flex flex-col sm:flex-row items-center gap-8">
+        <img src="/images/team/david.png" alt="David Azanza" class="w-32 h-32 rounded-full object-cover shrink-0" />
+        <div>
+          <span class="eyebrow mb-2 block">Your strategy lead</span>
+          <h3 class="text-xl font-bold mb-2">David Azanza</h3>
+          <p class="text-sm text-neutral-600 mb-3">Managing Director &amp; Strategy Practice Lead</p>
+          <p class="text-neutral-800 leading-relaxed">
+            Entrepreneur, advisor, and 10-year EO member. David has built and advised businesses across Southeast Asia
+            and brings a founder&rsquo;s perspective to every strategy engagement &mdash; practical, honest, and focused on what actually moves the needle.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Build a Strategy Your Team Can Actually Execute" />
+</Page>

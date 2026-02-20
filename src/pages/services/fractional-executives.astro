@@ -1,0 +1,147 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import Testimonial from "../../components/Testimonial.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Assess the Gap",
+    description: "We work with you to identify exactly what leadership capacity you\u2019re missing and what outcomes you need.",
+  },
+  {
+    number: "2",
+    title: "Match & Embed",
+    description: "We place an EOS-trained fractional leader who integrates with your team, culture, and operating rhythm.",
+  },
+  {
+    number: "3",
+    title: "Execute & Transition",
+    description: "Your fractional leader drives results while building the systems and team capability for a smooth handoff.",
+  },
+];
+
+const roles = [
+  {
+    title: "Fractional Integrator / COO",
+    description: "Day-to-day operations leadership. Harmonizes major functions, runs the organization, and manages execution so you can focus on vision.",
+  },
+  {
+    title: "Fractional CFO / Controller",
+    description: "Financial leadership, governance, and reporting. Builds financial clarity and discipline without a full-time executive hire.",
+  },
+  {
+    title: "Fractional CHRO",
+    description: "People systems, culture, and HR leadership. Designs and implements the people infrastructure your growing company needs.",
+  },
+  {
+    title: "Country Manager",
+    description: "International expansion leadership. Manages your presence in a new market with local expertise and executive judgment.",
+  },
+];
+---
+
+<Page title="Fractional Executives" description="Access senior operational talent without a full-time hire. EOS-trained fractional COOs, integrators, and advisors embedded in your leadership team.">
+  <Hero
+    title="Senior Leadership, Without the Full-Time Commitment"
+    subtitle="Our fractional COOs, integrators, and advisors embed inside your leadership team to drive execution and build systems that scale."
+    eyebrow="Fractional Executives"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Discuss Your Needs", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">You Need a Leader, Not Another Consultant</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          You know you need senior operational talent. Someone who can take ownership, drive execution, and free you
+          from being the bottleneck. But a full-time C-suite hire is expensive, risky, and slow.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          Our fractional executives aren&rsquo;t advisors who drop in once a month with recommendations.
+          They embed inside your team, attend your meetings, own your KPIs, and drive results &mdash;
+          at a fraction of the cost and commitment of a full-time hire.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">Why Fractional Works</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Senior talent at 30&ndash;50% of the cost of a full-time hire
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            No 6-month recruitment process &mdash; start in weeks, not months
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Flexible engagement &mdash; scale up or down as needs change
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            EOS-trained leaders who integrate with your existing systems
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Knowledge transfer built in &mdash; we build capability, not dependency
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Available roles</span>
+        <h2 class="text-2xl lg:text-4xl text-white">Fractional Leadership for Every Stage</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {roles.map((role) => (
+          <div class="bg-white/10 rounded-lg p-6">
+            <h3 class="text-lg font-bold text-white mb-2">{role.title}</h3>
+            <p class="text-sm text-white/80">{role.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How Fractional Engagements Work" steps={processSteps} />
+
+  <Testimonial
+    quote="I've worked closely with Team Satori since mid-2024, receiving invaluable support and expertise while setting up our Manila office. They've handled fast-paced recruitment, and office set up, efficiently, consistently delivering strong results under pressure. With our global leadership team, I've appreciated how Team Satori quickly adapts to various working styles and challenges. Thanks for your dedication!"
+    name="Dean Curtis"
+    title="Executive VP - People & Capability, EROAD"
+  />
+
+  <!-- Engagement Model -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <h2 class="text-2xl lg:text-3xl text-center mb-12">Engagement Model</h2>
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-3xl text-primary mb-2">2&ndash;3 days/week</div>
+          <p class="text-sm text-neutral-600">Typical fractional commitment</p>
+        </div>
+        <div>
+          <div class="text-3xl text-primary mb-2">6&ndash;12 months</div>
+          <p class="text-sm text-neutral-600">Standard engagement length</p>
+        </div>
+        <div>
+          <div class="text-3xl text-primary mb-2">30&ndash;50%</div>
+          <p class="text-sm text-neutral-600">Cost savings vs. full-time hire</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Find the Right Leader for Your Next Chapter" />
+</Page>

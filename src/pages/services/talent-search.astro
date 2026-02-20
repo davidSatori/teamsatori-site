@@ -1,0 +1,138 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import CTA from "../../components/CTA.astro";
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Define the Role",
+    description: "We work with you to build a clear job scorecard \u2014 not just responsibilities, but the outcomes this person needs to deliver.",
+  },
+  {
+    number: "2",
+    title: "Source & Screen",
+    description: "We tap our regional network and use structured screening to find candidates who fit the role, culture, and growth trajectory.",
+  },
+  {
+    number: "3",
+    title: "Present & Place",
+    description: "You interview a shortlist of qualified candidates. We support the offer process and onboarding to set everyone up for success.",
+  },
+];
+---
+
+<Page title="Talent Search" description="Find the right leadership and operational talent for your business across the Philippines and Southeast Asia.">
+  <Hero
+    title="Find the Right People for the Roles That Matter Most"
+    subtitle="We help you find and attract leadership, operations, and strategic talent across the Philippines and Southeast Asia."
+    eyebrow="Talent Search"
+    image="/images/heroes/hero-services.jpg"
+    primaryCTA={{ text: "Start Your Search", href: "/contact" }}
+  />
+
+  <!-- Problem -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <span class="eyebrow mb-3 block">The challenge</span>
+        <h2 class="text-2xl lg:text-4xl mb-6">Wrong Hires Are the Most Expensive Mistake</h2>
+        <p class="text-neutral-800 leading-relaxed mb-4">
+          A bad senior hire costs 2&ndash;3x their annual salary when you factor in lost productivity, team disruption,
+          and the time to start over. In Southeast Asia&rsquo;s competitive talent market, the stakes are even higher.
+        </p>
+        <p class="text-neutral-800 leading-relaxed">
+          We don&rsquo;t just fill seats. We find people who fit your culture, can deliver results in your specific context,
+          and have the capacity to grow with your company. Our search process is built on EOS&reg; principles &mdash;
+          Right People, Right Seats&trade;.
+        </p>
+      </div>
+      <div class="bg-purple-50 rounded-lg p-8">
+        <h3 class="text-lg font-bold mb-4">What Makes Our Search Different</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Job scorecards, not job descriptions &mdash; clarity on outcomes, not just tasks
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            GWC evaluation (Get it, Want it, Capacity to do it) for every candidate
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Strengths-based screening using Gallup&reg; and Kolbe&trade; assessments
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Deep regional network across the Philippines and Southeast Asia
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Cultural fit assessment &mdash; not just skills, but values alignment
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles We Fill -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Roles we fill</span>
+        <h2 class="text-2xl lg:text-4xl text-white">Leadership &amp; Strategic Talent</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">C-Suite &amp; Directors</h3>
+          <p class="text-sm text-white/80">COO, CFO, CHRO, Country Directors, and other executive roles.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Operations Leaders</h3>
+          <p class="text-sm text-white/80">Operations managers, integrators, and senior ops talent.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Finance &amp; HR Leaders</h3>
+          <p class="text-sm text-white/80">Controllers, finance directors, HR managers, and people leaders.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Sales &amp; Marketing</h3>
+          <p class="text-sm text-white/80">Sales directors, marketing leads, and business development leaders.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Technical Leads</h3>
+          <p class="text-sm text-white/80">Engineering managers, technical architects, and product leaders.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Specialized Roles</h3>
+          <p class="text-sm text-white/80">Industry-specific talent for unique operational needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How Our Talent Search Works" steps={processSteps} />
+
+  <!-- Stats -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-3xl text-primary mb-2">60+</div>
+          <p class="text-sm text-neutral-600">Hires placed across Southeast Asia</p>
+        </div>
+        <div>
+          <div class="text-3xl text-primary mb-2">5+</div>
+          <p class="text-sm text-neutral-600">Countries served</p>
+        </div>
+        <div>
+          <div class="text-3xl text-primary mb-2">90%</div>
+          <p class="text-sm text-neutral-600">Retention rate at 12 months</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Find the Right Person for Your Next Key Role" />
+</Page>
