@@ -1,0 +1,10 @@
+name: "Jeni Clift"
+title: "EOS Implementer"
+bio: "A seasoned business coach and Professional EOS Implementer who helps leaders build accountability, clarity, and high-performing teams."
+image: "/images/team/jeni.webp"
+practiceArea: "eos"
+certifications:
+  - "EOS Certified"
+linkedin: "https://www.eosworldwide.com/jeni-clift"
+order: 8
+active: true

@@ -1,0 +1,11 @@
+name: "Alia del Rosario"
+title: "Practice Lead - Team Health & Performance"
+bio: "Alia is a Gallup Strengths and Kolbe Certified Coach who helps leaders and teams grow through strengths-based, collaborative development."
+image: "/images/team/alia.png"
+practiceArea: "people"
+certifications:
+  - "Gallup Coach"
+  - "Kolbe Certified"
+linkedin: "https://www.linkedin.com/in/maria-alia/"
+order: 5
+active: true

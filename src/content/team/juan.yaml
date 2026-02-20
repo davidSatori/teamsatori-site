@@ -1,0 +1,10 @@
+name: "Juan Lee"
+title: "EOS Implementer"
+bio: "Juan is a Professional EOS Implementer and engineer helping leaders in Southeast Asia gain clarity, traction, and team alignment."
+image: "/images/team/juan.webp"
+practiceArea: "eos"
+certifications:
+  - "EOS Certified"
+linkedin: "https://www.eosworldwide.com/juan-lee"
+order: 9
+active: true

@@ -1,0 +1,5 @@
+name: "EOS Worldwide"
+issuer: "EOS Worldwide"
+logo: "/images/certs/eos.png"
+url: "https://www.eosworldwide.com"
+order: 1
