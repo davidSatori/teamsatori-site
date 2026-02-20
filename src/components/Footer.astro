@@ -1,0 +1,84 @@
+---
+const companyLinks = [
+  { name: "Meet the Team", href: "/about#team" },
+  { name: "Success Stories", href: "/case-studies" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+];
+
+const serviceLinks = [
+  { name: "EOS\u00AE Implementation", href: "/services/eos-implementation" },
+  { name: "Strategic Planning", href: "/services/strategy" },
+  { name: "Fractional Executives", href: "/services/fractional-executives" },
+  { name: "Financial Systems", href: "/services/financial-systems" },
+  { name: "Team Health & Performance", href: "/services/team-health-performance" },
+  { name: "People Experience Services", href: "/services/people-experience-services" },
+  { name: "Research & Program Design", href: "/services/research-program-design" },
+  { name: "Talent Search", href: "/services/talent-search" },
+  { name: "Satori Gateway", href: "/services/gateway" },
+];
+
+const legalLinks = [
+  { name: "Privacy", href: "/privacy-policy" },
+  { name: "Terms", href: "/terms" },
+  { name: "Cookies", href: "/cookie-policy" },
+];
+---
+
+<footer class="bg-purple-400 text-white">
+  <div class="container-site section-padding">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="inline-block mb-4">
+          <img src="/images/logo-white.svg" alt="Satori" class="h-10" />
+        </a>
+        <p class="text-sm text-white/80 leading-relaxed">
+          Empowering founder-led companies across Southeast Asia with structure, systems, and executive support.
+        </p>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h2 class="font-bold text-sm mb-4">Company</h2>
+        <ul class="space-y-2">
+          {companyLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-white/80 hover:text-white transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h2 class="font-bold text-sm mb-4">
+          <a href="/services" class="hover:text-white/80 transition-colors">Services</a>
+        </h2>
+        <ul class="space-y-2">
+          {serviceLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm text-white/80 hover:text-white transition-colors">{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/20">
+    <div class="container-site py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <ul class="flex items-center gap-4">
+        {legalLinks.map((link) => (
+          <li>
+            <a href={link.href} class="text-xs text-white/60 hover:text-white transition-colors">{link.name}</a>
+          </li>
+        ))}
+      </ul>
+      <p class="text-xs text-white/60">
+        All rights reserved &copy; {new Date().getFullYear()} Satori Executive Training Pte. Ltd.
+      </p>
+    </div>
+  </div>
+</footer>

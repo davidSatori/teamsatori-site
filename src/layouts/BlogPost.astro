@@ -1,0 +1,57 @@
+---
+import Base from "./Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CTA from "../components/CTA.astro";
+
+interface Props {
+  title: string;
+  date: Date;
+  author: string;
+  category: string;
+  summary: string;
+  image?: string;
+}
+
+const { title, date, author, category, summary, image } = Astro.props;
+
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}).format(date);
+---
+
+<Base title={title} description={summary} image={image}>
+  <Header />
+  <main class="flex-1">
+    <!-- Blog Header -->
+    <article>
+      <div class="bg-purple-50 py-16 lg:py-20">
+        <div class="container-narrow">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">{category}</span>
+            <span class="text-sm text-neutral-600">{formattedDate}</span>
+          </div>
+          <h1 class="text-3xl lg:text-5xl mb-4">{title}</h1>
+          <p class="text-lg text-neutral-600">{summary}</p>
+          <p class="text-sm text-neutral-600 mt-4">By {author}</p>
+        </div>
+      </div>
+
+      {image && (
+        <div class="container-narrow -mt-0">
+          <img src={image} alt={title} class="w-full rounded-lg shadow-lg" />
+        </div>
+      )}
+
+      <!-- Blog Content -->
+      <div class="container-narrow py-12 lg:py-16 prose prose-lg max-w-none">
+        <slot />
+      </div>
+    </article>
+
+    <CTA title="Let's Build the Systems That Match Your Vision" />
+  </main>
+  <Footer />
+</Base>

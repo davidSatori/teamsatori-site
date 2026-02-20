@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  image?: string;
+  eyebrow?: string;
+  primaryCTA?: { text: string; href: string };
+  secondaryCTA?: { text: string; href: string };
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  image = "/images/hero-default.jpg",
+  eyebrow,
+  primaryCTA,
+  secondaryCTA,
+} = Astro.props;
+---
+
+<section class="relative min-h-[500px] lg:min-h-[600px] flex items-end">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src={image} alt={title} class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-950/90 via-purple-950/70 to-transparent"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative container-site py-16 lg:py-20 grid lg:grid-cols-2 gap-8 items-end">
+    <div>
+      {eyebrow && <span class="eyebrow text-white/70 mb-3 block">{eyebrow}</span>}
+      <h1 class="text-3xl lg:text-5xl text-white leading-tight">{title}</h1>
+      {subtitle && <p class="text-lg text-white/80 mt-4">{subtitle}</p>}
+      {(primaryCTA || secondaryCTA) && (
+        <div class="flex flex-wrap gap-4 mt-8">
+          {primaryCTA && (
+            <a href={primaryCTA.href} class="btn-primary">{primaryCTA.text}</a>
+          )}
+          {secondaryCTA && (
+            <a href={secondaryCTA.href} class="btn-secondary !text-white !border-white/30 hover:!border-white">{secondaryCTA.text}</a>
+          )}
+        </div>
+      )}
+    </div>
+    {description && (
+      <div class="hidden lg:block">
+        <p class="text-white/80 leading-relaxed">{description}</p>
+      </div>
+    )}
+  </div>
+</section>

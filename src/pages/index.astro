@@ -1,17 +1,172 @@
 ---
+import Page from "../layouts/Page.astro";
+import Hero from "../components/Hero.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Testimonial from "../components/Testimonial.astro";
+import SocialProof from "../components/SocialProof.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
 
+const faqItems = [
+  {
+    question: "What is EOS\u00AE and how can it help my company scale?",
+    answer: "EOS\u00AE (Entrepreneurial Operating System) is a complete set of simple concepts and practical tools that help entrepreneurial companies get what they want from their businesses. It helps founders get everyone in the organization 100% on the same page with where the company is going and how it's going to get there.",
+  },
+  {
+    question: "What\u2019s a fractional integrator and when should I consider hiring one?",
+    answer: "A fractional integrator is a part-time operational leader who harmoniously integrates the major functions of the business, runs the organization, and manages the day-to-day issues. Consider one when you need senior operational leadership but aren\u2019t ready for a full-time hire.",
+  },
+  {
+    question: "What makes Satori different from other consultants or EOS\u00AE implementers?",
+    answer: "We\u2019re not just advisors\u2014we\u2019re operators. Our team has built and scaled businesses across Southeast and East Asia. We embed inside your leadership team and work hands-on to implement systems, not just recommend them.",
+  },
+  {
+    question: "Do you work outside the Philippines?",
+    answer: "Yes. While our core team is based in the Philippines, we work with founder-led companies across Southeast and East Asia including Singapore, Vietnam, Indonesia, and more.",
+  },
+];
+
+const howItWorksSteps = [
+  {
+    number: "1",
+    title: "Book an Intro Call",
+    description: "Share your challenges, goals, and where you are today. We\u2019ll explore whether Satori is the right fit.",
+  },
+  {
+    number: "2",
+    title: "Get a Tailored Plan",
+    description: "We design a practical engagement around what your business actually needs\u2014no generic playbooks.",
+  },
+  {
+    number: "3",
+    title: "Build Systems That Scale",
+    description: "Our team embeds alongside yours to install frameworks, build habits, and create lasting operational rhythm.",
+  },
+];
+
+const certLogos = [
+  { src: "/images/certs/eos.png", alt: "EOS" },
+  { src: "/images/certs/eos-visionary.png", alt: "EOS Visionary Masterclass" },
+  { src: "/images/certs/eos-integrator.png", alt: "EOS Integrator Masterclass" },
+  { src: "/images/certs/profit-first.png", alt: "Profit First" },
+  { src: "/images/certs/gallup.png", alt: "Gallup Strengths Coach" },
+  { src: "/images/certs/kolbe.png", alt: "Kolbe Certified Consultant" },
+  { src: "/images/certs/clockwork.png", alt: "The Clockwork System" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Page title="Home">
+  <Hero
+    title="When Growth Outpaces Systems, Founders Call Us"
+    subtitle="We help Southeast and East Asia's founder-led companies build the structure to scale — with EOS\u00AE, Profit First\u00AE, Gallup\u00AE and other proven frameworks that turn vision into execution."
+    image="/images/hero-home.jpg"
+    primaryCTA={{ text: "Book an Intro Call", href: "/contact" }}
+    secondaryCTA={{ text: "See how we help founders", href: "/services" }}
+  />
+
+  <!-- Built for Founders -->
+  <section class="section-padding">
+    <div class="container-site grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="/images/team-meeting.jpg" alt="Team Satori" class="rounded-lg shadow-lg" />
+      </div>
+      <div>
+        <span class="eyebrow mb-3 block">Who we help</span>
+        <h2 class="text-2xl lg:text-4xl mb-4"><strong>Built for Founders in Transition</strong></h2>
+        <p class="text-neutral-800 leading-relaxed mb-6">
+          You've grown the business. You've worn every hat. You've built a company through hard work, instinct, and vision.
+          Now you're hitting a complexity ceiling and you need systems to take it further without burning out.
+        </p>
+        <p class="text-neutral-800 leading-relaxed mb-6">
+          That's where we come in. You don't need more theory, you need a team that builds real systems with you.
+          We specialize in <strong>Founder-led companies</strong> across Southeast and East Asia that:
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Are run by visionary founders who are still hands-on
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Are scaling quickly but don't yet have the systems to support the growth
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Are implementing EOS, exploring it, or want help making it work
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Need structure in operations, finance, strategy, HR, or team dynamics
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Value practical, certified support that's been battle-tested inside companies
+          </li>
+          <li class="flex items-start gap-3 text-sm text-neutral-800">
+            <span class="text-primary mt-0.5">&#10003;</span>
+            Operate in Southeast and East Asia with regional business challenges
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">What we do</span>
+        <h2 class="text-2xl lg:text-4xl text-white mb-4">We Bring Structure Where It's Needed Most</h2>
+        <a href="/services" class="btn-primary">View all services</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">EOS&reg; Implementation</h3>
+          <p class="text-sm text-white/80">Get traction with an operating system that scales with you.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Strategic Planning</h3>
+          <p class="text-sm text-white/80">Discover what really drives growth and align your team around it.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Fractional Executive Services</h3>
+          <p class="text-sm text-white/80">Access senior talent without a full-time hire.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Financial Systems</h3>
+          <p class="text-sm text-white/80">Build cash flow clarity and profit habits from day one.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Team Health &amp; Performance</h3>
+          <p class="text-sm text-white/80">Your people are your biggest lever.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">People Services Systems</h3>
+          <p class="text-sm text-white/80">From hiring scorecards to accountability structures.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Talent Search</h3>
+          <p class="text-sm text-white/80">Find and attract the right talent for leadership roles.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <h3 class="text-lg font-bold text-white mb-2">Satori Gateway</h3>
+          <p class="text-sm text-white/80">Build your Philippines presence without building an executive team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks steps={howItWorksSteps} />
+
+  <Testimonial
+    quote="I've worked closely with Team Satori since mid-2024, receiving invaluable support and expertise while setting up our Manila office. They've handled fast-paced recruitment, and office set up, efficiently, consistently delivering strong results under pressure. With our global leadership team, I've appreciated how Team Satori quickly adapts to various working styles and challenges. Thanks for your dedication!"
+    name="Dean Curtis"
+    title="Executive VP - People & Capability, EROAD"
+  />
+
+  <SocialProof logos={certLogos} />
+
+  <FAQ items={faqItems} />
+
+  <CTA title="Let's Build the Systems That Match Your Vision" />
+</Page>

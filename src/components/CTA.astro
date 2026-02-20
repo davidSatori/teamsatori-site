@@ -1,0 +1,23 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  buttonText?: string;
+  buttonHref?: string;
+}
+
+const {
+  eyebrow = "For founders ready to scale with structure",
+  title,
+  buttonText = "Book an Intro Call",
+  buttonHref = "/contact",
+} = Astro.props;
+---
+
+<section class="bg-purple-50 section-padding">
+  <div class="container-site text-center">
+    {eyebrow && <span class="eyebrow mb-3 block">{eyebrow}</span>}
+    <h2 class="text-2xl lg:text-4xl mb-8">{title}</h2>
+    <a href={buttonHref} class="btn-primary">{buttonText}</a>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  logos: { src: string; alt: string }[];
+  footnote?: string;
+}
+
+const {
+  title = "Certified in the Systems that Founders Trust",
+  subtitle = "We're licensed and certified to implement the frameworks already used by the world's top-performing entrepreneurial teams",
+  logos,
+  footnote = "Each one brings structure. Together, they help you scale with confidence.",
+} = Astro.props;
+---
+
+<section class="section-padding">
+  <div class="container-site text-center">
+    {subtitle && <p class="text-sm text-neutral-600 mb-2">{subtitle}</p>}
+    <h2 class="text-2xl lg:text-4xl mb-12">{title}</h2>
+
+    <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+      {logos.map((logo) => (
+        <img src={logo.src} alt={logo.alt} class="h-16 lg:h-20 object-contain" />
+      ))}
+    </div>
+
+    {footnote && <p class="text-sm text-neutral-600 mt-8">{footnote}</p>}
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  title: string;
+}
+
+const { quote, name, title } = Astro.props;
+---
+
+<section class="bg-neutral-100 section-padding">
+  <div class="container-narrow text-center">
+    <span class="eyebrow mb-4 block">What our clients say</span>
+    <blockquote class="text-xl lg:text-2xl leading-relaxed mb-8">
+      &ldquo;{quote}&rdquo;
+    </blockquote>
+    <div>
+      <strong class="block">{name}</strong>
+      <span class="text-sm text-neutral-600">{title}</span>
+    </div>
+  </div>
+</section>
