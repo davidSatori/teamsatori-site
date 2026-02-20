@@ -1,0 +1,116 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import CTA from "../../components/CTA.astro";
+
+const deliverables = [
+  {
+    title: "Validated Business Model Canvas",
+    description: "Your team finally aligned on how your business actually works.",
+  },
+  {
+    title: "AI Opportunities Mapped",
+    description: "Across your entire business model — not just the obvious automation plays.",
+  },
+  {
+    title: "AI Value Map",
+    description: "Opportunities plotted by value, risk, and complexity so you can see what's a quick win vs. a long-term bet.",
+  },
+  {
+    title: "Top 3–5 Prioritized Opportunities",
+    description: "With clear next steps — not a 50-page report that sits in a drawer.",
+  },
+  {
+    title: "Team Alignment",
+    description: "On where to place your bets before you waste time and money on the wrong initiatives.",
+  },
+];
+---
+
+<Page title="AI Opportunity Map Workshop" description="Turn AI confusion into AI clarity in one day. Map where AI creates real value in your business and prioritize your best opportunities.">
+  <Hero
+    title="AI Opportunity Map Workshop"
+    subtitle="Turn AI Confusion into AI Clarity in One Day"
+    eyebrow="Strategy & Innovation"
+    image="/images/heroes/hero-services.jpg"
+    description="Your competitors are already experimenting with AI. Some will figure it out. Most will waste months chasing the wrong opportunities. In one intensive day, your leadership team will map your business model, stress-test it against AI disruption, and build a prioritized AI Value Map so you know exactly where AI creates value — and where it's just hype."
+    primaryCTA={{ text: "Map Your AI Strategy", href: "/contact" }}
+  />
+
+  <!-- This Is For You If -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="text-center mb-8">
+        <span class="eyebrow mb-3 block">Is this for you?</span>
+        <h2 class="text-2xl lg:text-4xl">This Workshop Is For You If&hellip;</h2>
+      </div>
+      <div class="card p-8 lg:p-12">
+        <p class="text-neutral-800 leading-relaxed text-lg">
+          You're a founder or executive who knows AI will reshape your industry, but you're tired of
+          consultants selling you vague roadmaps and vendor pitches. You need a <strong>working session, not a lecture</strong>,
+          that produces a real strategic map your team can execute on. You want to move fast, but you want to move smart.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Walk Away With -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">Deliverables</span>
+        <h2 class="text-2xl lg:text-4xl text-white">What You'll Walk Away With</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {deliverables.map((item, i) => (
+          <div class="bg-white/10 rounded-lg p-6">
+            <span class="text-3xl font-bold text-white/30 block mb-2">{i + 1}</span>
+            <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+            <p class="text-sm text-white/80">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-padding">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow mb-3 block">The process</span>
+        <h2 class="text-2xl lg:text-4xl">How the Workshop Works</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-purple-100 text-primary font-bold text-xl flex items-center justify-center mx-auto mb-4">1</div>
+          <h3 class="font-bold mb-2">Map Your Business Model</h3>
+          <p class="text-sm text-neutral-600">We build or validate your Business Model Canvas together so everyone is aligned on how your business actually works.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-purple-100 text-primary font-bold text-xl flex items-center justify-center mx-auto mb-4">2</div>
+          <h3 class="font-bold mb-2">Stress-Test Against AI</h3>
+          <p class="text-sm text-neutral-600">We systematically map where AI creates value across every part of your business model — beyond just the obvious plays.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-purple-100 text-primary font-bold text-xl flex items-center justify-center mx-auto mb-4">3</div>
+          <h3 class="font-bold mb-2">Prioritize &amp; Plan</h3>
+          <p class="text-sm text-neutral-600">Plot opportunities by value, risk, and complexity. Walk out with your top priorities and clear next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padding bg-purple-50">
+    <div class="container-narrow text-center">
+      <h2 class="text-2xl lg:text-4xl mb-4">Ready to Map Your AI Strategy?</h2>
+      <p class="text-neutral-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+        Stop guessing where AI fits. In one day, get the clarity and alignment your leadership team needs to move forward with confidence.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">Map Your AI Strategy</a>
+        <a href="/services/strategy" class="btn-secondary">Back to Strategy &amp; Innovation</a>
+      </div>
+    </div>
+  </section>
+</Page>
