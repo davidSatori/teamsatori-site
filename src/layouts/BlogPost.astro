@@ -71,8 +71,10 @@ const colors = categoryColors[category] || { bg: "var(--color-purple-50)", text:
       )}
 
       <!-- Blog Content -->
-      <div class="container-narrow py-12 lg:py-16 prose prose-lg max-w-none prose-headings:font-normal prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
-        <slot />
+      <div class="container-narrow py-12 lg:py-16">
+        <div class="prose prose-lg mx-auto prose-headings:font-normal prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+          <slot />
+        </div>
       </div>
     </article>
 
