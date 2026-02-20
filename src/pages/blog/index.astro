@@ -9,11 +9,11 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const categories = [
-  { label: "All", value: "all" },
-  { label: "EOS", value: "eos" },
-  { label: "Strategy", value: "strategy" },
-  { label: "Team Health", value: "team-health" },
-  { label: "Fractional", value: "fractional" },
+  { label: "All", value: "all", color: "", bgColor: "" },
+  { label: "EOS", value: "eos", color: "var(--color-cat-eos)", bgColor: "var(--color-cat-eos-bg)" },
+  { label: "Strategy", value: "strategy", color: "var(--color-cat-strategy)", bgColor: "var(--color-cat-strategy-bg)" },
+  { label: "Team Health", value: "team-health", color: "var(--color-cat-team-health)", bgColor: "var(--color-cat-team-health-bg)" },
+  { label: "Fractional", value: "fractional", color: "var(--color-cat-fractional)", bgColor: "var(--color-cat-fractional-bg)" },
 ];
 ---
 
@@ -31,8 +31,10 @@ const categories = [
       <div class="flex flex-wrap gap-2" id="category-filters">
         {categories.map((cat) => (
           <button
-            class="filter-btn px-4 py-2 text-sm rounded-full border border-neutral-200 hover:border-primary hover:text-primary transition-colors"
+            class="filter-btn px-4 py-2 text-sm rounded-full border border-neutral-200 transition-colors"
             data-category={cat.value}
+            data-color={cat.color}
+            data-bg={cat.bgColor}
           >
             {cat.label}
           </button>
@@ -78,9 +80,19 @@ const categories = [
   function setActive(category: string) {
     buttons.forEach((btn) => {
       const isActive = btn.dataset.category === category;
-      btn.classList.toggle("bg-primary", isActive);
-      btn.classList.toggle("text-white", isActive);
-      btn.classList.toggle("border-primary", isActive);
+      if (isActive && btn.dataset.color) {
+        btn.style.backgroundColor = btn.dataset.bg || "";
+        btn.style.color = btn.dataset.color || "";
+        btn.style.borderColor = btn.dataset.color || "";
+      } else if (isActive) {
+        btn.style.backgroundColor = "#803aa5";
+        btn.style.color = "#fff";
+        btn.style.borderColor = "#803aa5";
+      } else {
+        btn.style.backgroundColor = "";
+        btn.style.color = "";
+        btn.style.borderColor = "";
+      }
     });
 
     let visible = 0;

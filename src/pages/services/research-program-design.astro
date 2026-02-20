@@ -1,0 +1,178 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import HowItWorks from "../../components/HowItWorks.astro";
+import CTA from "../../components/CTA.astro";
+
+const useCases = [
+  {
+    title: "Scaling Faster Than Your Systems",
+    situation: "Headcount growth outpaced training and documentation. Execution depends on key people.",
+    solution: "Design training, SOPs, and playbooks that create consistency without adding management layers.",
+  },
+  {
+    title: "Knowledge Walking Out the Door",
+    situation: "Critical expertise isn\u2019t documented. Work slows down whenever specialists leave or are unavailable.",
+    solution: "Extract decision logic and edge-case handling into usable documentation that stays in the business.",
+  },
+  {
+    title: "Good People, Slower Execution Than Expected",
+    situation: "You have a capable team and the right tools (EOS\u00AE, Kolbe), yet decisions lag and follow-through is uneven.",
+    solution: "Culture assessments surface hidden constraints. Targeted interventions improve execution speed.",
+  },
+  {
+    title: "Inconsistent Work Across Teams or Locations",
+    situation: "Same roles are performed differently across teams, causing variable outcomes and quality.",
+    solution: "Design SOPs and training that define how work gets done while preserving judgment and autonomy.",
+  },
+  {
+    title: "Training That Doesn\u2019t Stick",
+    situation: "Workshops and external trainers don\u2019t change behavior in daily work.",
+    solution: "Build train-the-trainer programs using your real scenarios, embedded in your operating rhythm.",
+  },
+  {
+    title: "Preparing for Scale, Succession, or Exit",
+    situation: "You\u2019re planning growth, leadership transitions, or a sale \u2014 but execution still depends on the founders.",
+    solution: "Create transferable systems and documentation that make the business resilient without you.",
+  },
+];
+
+const processSteps = [
+  {
+    number: "1",
+    title: "Research & Discovery",
+    description: "We study how work actually gets done across roles and teams. Interviews, observation, and data analysis surface the real constraints before we build anything.",
+  },
+  {
+    number: "2",
+    title: "Design & Build",
+    description: "Programs, SOPs, and training are designed using your language, your cases, and your operating context \u2014 not generic templates.",
+  },
+  {
+    number: "3",
+    title: "Deliver & Transfer",
+    description: "We train your internal team to run the programs independently. Knowledge transfer is built into every engagement so you\u2019re never dependent on us.",
+  },
+];
+---
+
+<Page title="Research & Program Design" description="Research-led training, SOPs, and culture programs designed for how your teams actually operate.">
+  <Hero
+    title="Turn Insights into Systems That Work"
+    subtitle="Research-led training, SOPs, and culture programs delivered in weeks, not months."
+    eyebrow="Research & Program Design"
+    image="/images/heroes/hero-services.jpg"
+    description="Today\u2019s founders need evidence, contextual understanding, and programs tailored to how their teams operate. This practice blends applied research with operational execution to design programs teams will adopt and that drive measurable outcomes."
+    primaryCTA={{ text: "Start a Conversation", href: "/contact" }}
+  />
+
+  <!-- What This Practice Is For -->
+  <section class="section-padding">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow mb-3 block">What this practice is for</span>
+        <h2 class="text-2xl lg:text-4xl">Built for Founders Who Need Results, Not Reports</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-6">
+          <h3 class="text-lg font-bold mb-2">Reduce Time-to-Productivity</h3>
+          <p class="text-sm text-neutral-800 leading-relaxed">Accelerate effectiveness of new hires and promoted leaders through clear training, documented decision logic, and role-specific playbooks.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold mb-2">Eliminate Execution Drag</h3>
+          <p class="text-sm text-neutral-800 leading-relaxed">Uncover and remove hidden cultural and operational constraints that slow decisions and create unnecessary rework.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold mb-2">Protect Institutional Knowledge</h3>
+          <p class="text-sm text-neutral-800 leading-relaxed">Convert critical expertise into SOPs and playbooks before key people leave, so the business isn&rsquo;t dependent on any one person.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold mb-2">Build Internal Capability</h3>
+          <p class="text-sm text-neutral-800 leading-relaxed">Enable your team to train others using real cases and your language &mdash; without building a training department.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold mb-2">Connect Culture to Results</h3>
+          <p class="text-sm text-neutral-800 leading-relaxed">Move beyond values statements to measurable improvements in decision speed, accountability, and team alignment.</p>
+        </div>
+        <div class="card p-6">
+          <h3 class="text-lg font-bold mb-2">Increase Consistency</h3>
+          <p class="text-sm text-neutral-800 leading-relaxed">Align work execution across teams and locations while preserving autonomy &mdash; without micromanagement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="section-padding bg-purple-700 text-white">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow !text-white/60 mb-3 block">What we deliver</span>
+        <h2 class="text-2xl lg:text-4xl text-white mb-4">Our Services &amp; Products</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white/10 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-white mb-2">Train-the-Trainer Programs</h3>
+          <p class="text-sm text-white/60 mb-3">Build internal capability fast, without building a training department.</p>
+          <p class="text-sm text-white/80 leading-relaxed">Custom training programs using your language, cases, and operating context. Integrates into your existing cadence (EOS&reg; or your rhythms) and aligns with talent tools like Kolbe and CliftonStrengths. Delivers early results with simple adoption metrics.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-white mb-2">Documentation Systems (SOPs &amp; Playbooks)</h3>
+          <p class="text-sm text-white/60 mb-3">Turn critical know-how into systems your team can rely on.</p>
+          <p class="text-sm text-white/80 leading-relaxed">Extracts expertise from subject-matter experts through interviews to create usable documentation. Captures decision logic and edge cases without burdening your team. Results: faster onboarding, consistent execution, lower error rates.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-white mb-2">Culture Assessment &amp; Activation</h3>
+          <p class="text-sm text-white/60 mb-3">Identify what&rsquo;s really slowing execution and fix it with precision.</p>
+          <p class="text-sm text-white/80 leading-relaxed">Research-grade culture assessments measuring actual behavior &mdash; not just sentiment. Links findings to operational metrics like decision latency and escalation volume. Translates insights into prioritized, owner-assigned interventions.</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-8">
+          <h3 class="text-xl font-bold text-white mb-2">Applied Research &amp; Program Design</h3>
+          <p class="text-sm text-white/60 mb-3">Design before delivery, so programs actually work.</p>
+          <p class="text-sm text-white/80 leading-relaxed">Begins with research to understand how work really gets done across roles and teams. Surfaces constraints through interviews, observation, and data analysis &mdash; then builds programs grounded in reality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section-padding">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <span class="eyebrow mb-3 block">When to reach out</span>
+        <h2 class="text-2xl lg:text-4xl">Is This You?</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {useCases.map((uc) => (
+          <div class="card p-6">
+            <h3 class="text-lg font-bold mb-3">{uc.title}</h3>
+            <p class="text-sm text-neutral-600 mb-3"><strong>Situation:</strong> {uc.situation}</p>
+            <p class="text-sm text-neutral-800"><strong>Solution:</strong> {uc.solution}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <HowItWorks title="How We Work" steps={processSteps} />
+
+  <!-- Practice Lead -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="flex flex-col sm:flex-row items-center gap-8">
+        <img src="/images/team/isah.png" alt="Ana Isabel Caguicla" class="w-32 h-32 rounded-full object-cover shrink-0" />
+        <div>
+          <span class="eyebrow mb-2 block">Your practice lead</span>
+          <h3 class="text-xl font-bold mb-2">Ana Isabel Caguicla</h3>
+          <p class="text-sm text-neutral-600 mb-3">Head of Research &amp; Program Development</p>
+          <p class="text-neutral-800 leading-relaxed">
+            Isah is an educator and researcher with 20+ years&rsquo; experience in curriculum design, academic leadership,
+            and program development. She brings a research-first approach to building training, SOPs, and culture programs
+            that actually change how teams work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let\u2019s Design Programs That Actually Work" />
+</Page>

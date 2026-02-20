@@ -16,6 +16,14 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   month: "long",
   day: "numeric",
 }).format(date);
+
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  eos: { bg: "var(--color-cat-eos-bg)", text: "var(--color-cat-eos)" },
+  strategy: { bg: "var(--color-cat-strategy-bg)", text: "var(--color-cat-strategy)" },
+  "team-health": { bg: "var(--color-cat-team-health-bg)", text: "var(--color-cat-team-health)" },
+  fractional: { bg: "var(--color-cat-fractional-bg)", text: "var(--color-cat-fractional)" },
+};
+const colors = categoryColors[category] || { bg: "var(--color-purple-50)", text: "var(--color-primary)" };
 ---
 
 <a href={`/blog/${slug}`} class="card overflow-hidden group">
@@ -26,7 +34,10 @@ const formattedDate = new Intl.DateTimeFormat("en-US", {
   )}
   <div class="p-6">
     <div class="flex items-center gap-3 mb-3">
-      <span class="text-xs font-bold uppercase tracking-wider text-primary bg-purple-50 px-2 py-1 rounded">{category}</span>
+      <span
+        class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
+        style={`background-color: ${colors.bg}; color: ${colors.text};`}
+      >{category.replace("-", " ")}</span>
       <span class="text-xs text-neutral-600">{formattedDate}</span>
     </div>
     <h3 class="text-lg mb-2 group-hover:text-primary transition-colors">{title}</h3>

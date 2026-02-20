@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* ============================================================
    Satori Brand Design Tokens — Tailwind v4 CSS Theme
@@ -32,6 +33,16 @@
   --color-primary-light: #b278dc;
   --color-error: #ea384c;
   --color-teal: #4a9b8e;
+
+  /* --- Colors: Blog Category --- */
+  --color-cat-eos: #f0a116;
+  --color-cat-eos-bg: #fef3d6;
+  --color-cat-strategy: #5b8abf;
+  --color-cat-strategy-bg: #dde8f3;
+  --color-cat-team-health: #803aa5;
+  --color-cat-team-health-bg: #e4d3f0;
+  --color-cat-fractional: #a06cbe;
+  --color-cat-fractional-bg: #eddaf7;
 
   /* --- Font Families --- */
   --font-heading: "Lato", sans-serif;

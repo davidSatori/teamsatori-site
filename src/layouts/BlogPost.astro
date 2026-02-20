@@ -8,45 +8,70 @@ interface Props {
   title: string;
   date: Date;
   author: string;
+  authorImage?: string;
   category: string;
   summary: string;
   image?: string;
 }
 
-const { title, date, author, category, summary, image } = Astro.props;
+const { title, date, author, authorImage, category, summary, image } = Astro.props;
 
 const formattedDate = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 }).format(date);
+
+const categoryColors: Record<string, { bg: string; text: string }> = {
+  eos: { bg: "var(--color-cat-eos-bg)", text: "var(--color-cat-eos)" },
+  strategy: { bg: "var(--color-cat-strategy-bg)", text: "var(--color-cat-strategy)" },
+  "team-health": { bg: "var(--color-cat-team-health-bg)", text: "var(--color-cat-team-health)" },
+  fractional: { bg: "var(--color-cat-fractional-bg)", text: "var(--color-cat-fractional)" },
+};
+const colors = categoryColors[category] || { bg: "var(--color-purple-50)", text: "var(--color-primary)" };
 ---
 
 <Base title={title} description={summary} image={image}>
   <Header />
   <main class="flex-1">
-    <!-- Blog Header -->
     <article>
-      <div class="bg-purple-50 py-16 lg:py-20">
+      <!-- Back Link -->
+      <div class="container-narrow pt-6">
+        <a href="/blog" class="inline-flex items-center gap-1 text-sm text-neutral-600 hover:text-primary transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+          Back to Blog
+        </a>
+      </div>
+
+      <!-- Blog Header -->
+      <div class="bg-purple-50 py-16 lg:py-20 mt-4">
         <div class="container-narrow">
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">{category}</span>
+            <span
+              class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
+              style={`background-color: ${colors.bg}; color: ${colors.text};`}
+            >{category.replace("-", " ")}</span>
             <span class="text-sm text-neutral-600">{formattedDate}</span>
           </div>
           <h1 class="text-3xl lg:text-5xl mb-4">{title}</h1>
-          <p class="text-lg text-neutral-600">{summary}</p>
-          <p class="text-sm text-neutral-600 mt-4">By {author}</p>
+          <p class="text-lg text-neutral-600 mb-6">{summary}</p>
+          <div class="flex items-center gap-3">
+            {authorImage && (
+              <img src={authorImage} alt={author} class="w-10 h-10 rounded-full object-cover" />
+            )}
+            <p class="text-sm text-neutral-600">By <strong class="text-neutral-950">{author}</strong></p>
+          </div>
         </div>
       </div>
 
       {image && (
-        <div class="container-narrow -mt-0">
+        <div class="container-narrow -mt-8 mb-12 relative z-10">
           <img src={image} alt={title} class="w-full rounded-lg shadow-lg" />
         </div>
       )}
 
       <!-- Blog Content -->
-      <div class="container-narrow py-12 lg:py-16 prose prose-lg max-w-none">
+      <div class="container-narrow py-12 lg:py-16 prose prose-lg max-w-none prose-headings:font-normal prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
         <slot />
       </div>
     </article>
