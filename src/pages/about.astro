@@ -1,0 +1,206 @@
+---
+import Page from "../layouts/Page.astro";
+import Hero from "../components/Hero.astro";
+import TeamMember from "../components/TeamMember.astro";
+import CTA from "../components/CTA.astro";
+
+const leadership = [
+  {
+    name: "Haraya del Rosario Gust",
+    title: "Founder & President",
+    bio: "Visionary founder, 10-year EO member, and Expert EOS Implementer\u2122 helping entrepreneurs grow\u2014built 3 firms, leading 250+ creatives globally.",
+    image: "/images/team/haraya.png",
+    certifications: ["EOS\u00AE Certified", "Profit First Pro", "EOS Visionary Masterclass", "Kolbe\u2122 Certified"],
+    linkedin: "https://www.linkedin.com/in/iadelrosario/",
+    href: "/team/haraya-del-rosario-gust",
+  },
+  {
+    name: "David Azanza",
+    title: "Managing Director & Strategy Practice Lead",
+    bio: "Entrepreneur, advisor, and 10-year EO member helping founders grow with clarity, calm, and systems that scale.",
+    image: "/images/team/david.png",
+    linkedin: "https://www.linkedin.com/in/davidazanza/",
+    href: "/team/david-azanza",
+  },
+  {
+    name: "Czarina A\u00F1o-Agullana",
+    title: "Practice Lead - Integrator Services",
+    bio: "A seasoned Integrator and EOS Masterclass grad with 18+ years of ops, marketing, and leadership experience in scaling teams and systems.",
+    image: "/images/team/czarina.jpg",
+    certifications: ["EOS Integrator Masterclass"],
+    linkedin: "https://www.linkedin.com/in/czarinaano/",
+    href: "/team/czarina-ano-agullana",
+  },
+  {
+    name: "Abigail Madura",
+    title: "Practice Lead - People Services",
+    bio: "Abi is a seasoned HR leader and ontological coach with 20+ years of experience building people systems and leading EOS-aligned HR practices.",
+    image: "/images/team/abi.png",
+    linkedin: "https://www.linkedin.com/in/abigailmadura/",
+    href: "/team/abigail-madura",
+  },
+  {
+    name: "Alia del Rosario",
+    title: "Practice Lead - Team Health & Performance",
+    bio: "Alia is a Gallup Strengths and Kolbe Certified Coach who helps leaders and teams grow through strengths-based, collaborative development.",
+    image: "/images/team/alia.png",
+    certifications: ["Gallup\u00AE Coach", "Kolbe\u2122 Certified"],
+    linkedin: "https://www.linkedin.com/in/maria-alia/",
+    href: "/team/alia-del-rosario",
+  },
+  {
+    name: "Ana Isabel Caguicla",
+    title: "Head of Research & Program Development",
+    bio: "Isah is an educator and researcher with 20+ years\u2019 experience in curriculum design, academic leadership, and program development.",
+    image: "/images/team/isah.png",
+    linkedin: "https://www.linkedin.com/in/ana-isabel-caguicla/",
+    href: "/team/ana-isabel-caguicla",
+  },
+];
+
+const eosImplementers = [
+  {
+    name: "Audrey Tanco Uy",
+    title: "EOS Implementer",
+    bio: "Audrey is a seasoned F&B entrepreneur and Professional EOS Implementer\u00AE helping businesses scale with clarity and operational excellence.",
+    image: "/images/team/audrey.webp",
+    certifications: ["EOS\u00AE Certified"],
+    linkedin: "https://www.eosworldwide.com/audrey-uy",
+    href: "/team/audrey-tanco-uy",
+  },
+  {
+    name: "Jeni Clift",
+    title: "EOS Implementer",
+    bio: "A seasoned business coach and Professional EOS Implementer\u00AE who helps leaders build accountability, clarity, and high-performing teams.",
+    image: "/images/team/jeni.webp",
+    certifications: ["EOS\u00AE Certified"],
+    linkedin: "https://www.eosworldwide.com/jeni-clift",
+    href: "/team/jeni-clift",
+  },
+  {
+    name: "Juan Lee",
+    title: "EOS Implementer",
+    bio: "Juan is a Professional EOS Implementer\u00AE and engineer helping leaders in Southeast Asia gain clarity, traction, and team alignment.",
+    image: "/images/team/juan.webp",
+    certifications: ["EOS\u00AE Certified"],
+    linkedin: "https://www.eosworldwide.com/juan-lee",
+    href: "/team/juan-lee",
+  },
+  {
+    name: "Wallace Li",
+    title: "EOS Implementer",
+    bio: "Wallace is a Professional EOS Implementer\u00AE and former CFO helping leadership teams in Southeast Asia drive clarity, discipline, and traction.",
+    image: "/images/team/wallace.jpeg",
+    certifications: ["EOS\u00AE Certified"],
+    linkedin: "https://www.eosworldwide.com/wallace-li",
+    href: "/team/wallace-li",
+  },
+];
+
+const operations = [
+  {
+    name: "Brian Bernales",
+    title: "EOS Operations Associate",
+    bio: "Brian ensures seamless client journeys, streamlines operations, and delivers proactive support from first contact to program completion.",
+    image: "/images/team/brian.png",
+    linkedin: "https://www.linkedin.com/in/brian-anthony-bernales-737472150/",
+    href: "/team/brian-bernales",
+  },
+  {
+    name: "Isabella Angan",
+    title: "EOS Practice Integrator",
+    bio: "Isa leads EOS practice ops at Satori, ensuring seamless support and execution through strong systems, service, and team coordination.",
+    image: "/images/team/isa.png",
+    linkedin: "https://www.linkedin.com/in/isabella-angan-7264b4195/",
+    href: "/team/isa-angan",
+  },
+  {
+    name: "Bea Bufi",
+    title: "EOS Marketing Associate",
+    bio: "Bea manages EOS client acquisition - qualifying leads, handling outreach, and ensuring a smooth, supportive path to onboarding.",
+    image: "/images/team/bea.png",
+    linkedin: "https://www.linkedin.com/in/beafrancescabufi13/",
+    href: "/team/bea-bufi",
+  },
+  {
+    name: "Aira Moses",
+    title: "Team Health Integrator",
+    image: "/images/team/aira.jpg",
+    href: "/team/aira-moses",
+  },
+];
+---
+
+<Page title="About Satori" description="EOS Coaches & Fractional Leaders in Asia. Built by Operators, Not Just Advisors.">
+  <Hero
+    title="We're on a mission to empower founders and entrepreneurs to build thriving businesses and achieve lasting success."
+    subtitle="Built by Operators, Not Just Advisors"
+    eyebrow="About Team Satori"
+    image="/images/heroes/hero-about.jpg"
+    description="You won't find generic consultants here. Our team includes entrepreneurs who have built and scaled businesses to exit and understand the pains of what it takes to get a company to ever higher levels of performance and returns."
+  />
+
+  <!-- Why Clients Choose Us -->
+  <section class="section-padding">
+    <div class="container-site">
+      <h2 class="text-2xl lg:text-4xl mb-6">Why clients choose us</h2>
+      <p class="text-neutral-800 leading-relaxed mb-6 max-w-3xl">
+        We've been in the trenches in our own businesses, and we've worked alongside founder-led companies across Southeast and East Asia &mdash; from tech startups in Vietnam to family-run firms in Singapore and the Philippines.
+      </p>
+      <p class="text-neutral-800 mb-6">We've seen what happens when:</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-lg">&times;</span>
+          <p class="text-sm text-neutral-800">Leadership is misaligned</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-lg">&times;</span>
+          <p class="text-sm text-neutral-800">Hiring systems are overwhelmed</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-lg">&times;</span>
+          <p class="text-sm text-neutral-800">There's no clear strategy to anchor decisions</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-primary text-lg">&times;</span>
+          <p class="text-sm text-neutral-800">Teams grow but accountability stays murky</p>
+        </div>
+      </div>
+      <p class="text-neutral-800 leading-relaxed max-w-3xl">
+        We don't offer one-size-fits-all solutions. We embed where we're needed, whether in ops, finance, people services, or execution, and we help you get from where you are to where you want to be.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section-padding bg-purple-50" id="team">
+    <div class="container-site">
+      <h2 class="text-2xl lg:text-4xl text-center mb-16">Meet Our Team</h2>
+
+      <!-- Leadership -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {leadership.map((member) => (
+          <TeamMember {...member} />
+        ))}
+      </div>
+
+      <!-- EOS Implementers -->
+      <h3 class="text-xl text-center mb-8 text-neutral-600">EOS Implementers</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {eosImplementers.map((member) => (
+          <TeamMember {...member} />
+        ))}
+      </div>
+
+      <!-- Operations -->
+      <h3 class="text-xl text-center mb-8 text-neutral-600">Operations & Support</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {operations.map((member) => (
+          <TeamMember {...member} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Let's Build the Systems That Match Your Vision" />
+</Page>

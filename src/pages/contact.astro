@@ -1,0 +1,56 @@
+---
+import Page from "../layouts/Page.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Page
+  title="Contact Us"
+  description="Ready to connect? Let's talk about your growth goals. Whether you're implementing EOS, hiring regionally, or building strategy — we're here to help."
+>
+  <Hero
+    title="Ready to connect? Let's talk about your growth goals."
+    eyebrow="Contact Us"
+    image="/images/heroes/hero-contact.jpg"
+    description="Whether you're implementing EOS, hiring regionally, or trying to get your strategy out of your head and into your team — we're here to help."
+  />
+
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="text-center mb-12">
+        <span class="eyebrow mb-3 block">Let's connect</span>
+        <h2 class="text-2xl lg:text-4xl mb-4">Ready to start a conversation?</h2>
+        <p class="text-neutral-600">
+          Reach out to our team for practical guidance, structured support, or just to explore your next step.
+        </p>
+      </div>
+
+      <!-- Copper CRM Form Embed -->
+      <div class="max-w-xl mx-auto">
+        <iframe
+          src="https://forms.copper.com/j/wYV76PB5U5RR6sQqgufNui?type=embed"
+          id="copper-form"
+          class="w-full border-0"
+          style="min-height: 600px;"
+          title="Contact Form"
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <!-- Trust Signals -->
+      <div class="mt-16 grid sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <div class="text-3xl text-primary mb-2">60+</div>
+          <p class="text-sm text-neutral-600">Hires placed across Southeast Asia</p>
+        </div>
+        <div>
+          <div class="text-3xl text-primary mb-2">7</div>
+          <p class="text-sm text-neutral-600">Professional certifications</p>
+        </div>
+        <div>
+          <div class="text-3xl text-primary mb-2">5+</div>
+          <p class="text-sm text-neutral-600">Countries served across Asia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Page>

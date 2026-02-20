@@ -1,0 +1,88 @@
+---
+import Page from "../../layouts/Page.astro";
+import Hero from "../../components/Hero.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import CTA from "../../components/CTA.astro";
+
+const services = [
+  {
+    title: "EOS<sup>&reg;</sup> Implementation",
+    description: "Get traction with an operating system that scales with you. We help founders roll out EOS properly, with the discipline to sustain it.",
+    href: "/services/eos-implementation",
+  },
+  {
+    title: "Strategy &amp; Innovation",
+    description: "Research-backed strategy and innovation workshops. We help you uncover customer needs, map growth opportunities, validate new business models, and build strategic clarity your entire team can act on.",
+    href: "/services/strategy",
+  },
+  {
+    title: "Fractional Executives",
+    description: "Access senior talent without a full-time hire. Our fractional COOs, integrators, and advisors embed inside your leadership team.",
+    href: "/services/fractional-executives",
+  },
+  {
+    title: "Financial Systems",
+    description: "Build cash flow clarity and profit habits from day one. We help you install the Profit First system to get control of your finances.",
+    href: "/services/financial-systems",
+  },
+  {
+    title: "Team Health &amp; Performance",
+    description: "Your people are your biggest lever. We use Gallup\u00AE Strengths and Kolbe\u2122 assessments to help you hire, coach, and structure your team.",
+    href: "/services/team-health-performance",
+  },
+  {
+    title: "People Services Systems",
+    description: "From hiring scorecards to accountability structures, we build people services systems that scale with your growing business.",
+    href: "/services/people-experience-services",
+  },
+  {
+    title: "Talent Search",
+    description: "We help you find and attract the right talent for leadership, operations, and strategic roles across the Philippines.",
+    href: "/services/talent-search",
+  },
+  {
+    title: "Satori Gateway",
+    description: "Build your Philippines presence without building an executive team. Fractional leadership that delivers strategy, governance, and local expertise.",
+    href: "/services/gateway",
+  },
+];
+---
+
+<Page title="Our Services" description="Systemic solutions designed specifically for founder-led businesses in Southeast and East Asia.">
+  <Hero
+    title="Built for Founders Who've Outgrown Hustle"
+    subtitle="Systemic solutions designed specifically for founder-led businesses in Southeast and East Asia."
+    eyebrow="Our Services"
+    image="/images/heroes/hero-services.jpg"
+    description="You've grown the business. Now you need the systems, structure, and team to go further without burning out or bottlenecking growth. Whether you're implementing EOS, hiring your next leadership role, or finally tackling financial chaos, we help you scale with clarity."
+  />
+
+  <section class="section-padding">
+    <div class="container-site">
+      <div class="text-center mb-12">
+        <p class="text-neutral-600 mb-2">Each of our practice areas is led by an expert who works hands-on with your leadership team to design and implement systems that work in your real-world context.</p>
+        <h2 class="text-2xl lg:text-4xl">Our Services</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Not sure where to start? -->
+  <section class="section-padding bg-purple-50">
+    <div class="container-narrow text-center">
+      <h2 class="text-2xl lg:text-3xl mb-4">Not sure where to start?</h2>
+      <p class="text-neutral-600 leading-relaxed mb-8">
+        Many founders come to us knowing something needs to change but unsure which system to tackle first.
+        That's okay &mdash; we'll help you figure it out. Book a free intro call and we'll map out what matters most for your business right now.
+      </p>
+      <a href="/contact" class="btn-primary">Book an Intro Call</a>
+    </div>
+  </section>
+
+  <CTA title="Let's Build the Systems That Match Your Vision" />
+</Page>
